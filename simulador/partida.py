@@ -6,11 +6,12 @@ gols_visitante = 0
 lances = ["gol", "defesa", "falta", "escanteio", "pênalti"]
 penalti = ["gol", "gol", "gol" "gol", "gol", "gol", "defesa", "defesa", "erro", "erro"]
 
-time_casa = "VASCO"
-time_visitante = "CORINTHIANS"
+time_casa = input("Escolha o time da casa: ").upper()
+time_visitante = input("Escolha o time visitante: ").upper()
+estadio = input(f"Escolha o estádio para a partida entre {time_casa} e {time_visitante}: ")
 
 print(f"========{time_casa} x {time_visitante}========")
-print("A bola rola no São Januário!\n")
+print(f"A bola rola no {estadio}\n")
 
 for minuto in range(1, 93):
     sorteio = random.randint(1, 1000)
@@ -31,22 +32,22 @@ for minuto in range(1, 93):
         print(f"{minuto}' - Boa chance de gol! Mas o goleiro faz a defesa.")
 
     elif sorteio <= 150:
-        print(f"{minuto}' - Falta cometida! O juiz marca a infração.")
+        print(f"{minuto}' - Falta cometida! O juiz marca a falta para o(a) {random.choice([time_casa, time_visitante])}")
 
-    elif sorteio <= 250:
-        print(f"{minuto}' - Escanteio para o {time_casa}")
+    elif sorteio <= 200:
+        print(f"{minuto}' - Escanteio para o(a) {time_casa}")
 
-    elif sorteio == 257:
-        print(f"{minuto}' - Pênalti para o {time_visitante}")
+    elif sorteio == 207:
+        print(f"{minuto}' - Pênalti para o(a) {time_visitante}")
 
         resultado_penalti = random.choice(penalti)
 
         if resultado_penalti == "gol":
             gols_visitante += 1
-            print(f"{minuto}' - GOL DO {time_visitante} DE PENALTIII!")
+            print(f"{minuto}' - GOL DO(a) {time_visitante} DE PENALTIII!")
 
         elif resultado_penalti == "defesa":
-            print(f"{minuto}' - O GOLEIRO DO {time_casa} DEFEEENDEEE O PÊNALTI!")
+            print(f"{minuto}' - O GOLEIRO DO(a) {time_casa} DEFEEENDEEE O PÊNALTI!")
 
         else:
             print(f"{minuto}' - O JOGADOR DO {time_visitante} DESPERDIÇA O PÊNALTI!")

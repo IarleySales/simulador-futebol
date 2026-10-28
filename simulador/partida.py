@@ -4,7 +4,7 @@ gols_casa = 0
 gols_visitante = 0
 
 lances = ["gol", "defesa", "falta", "escanteio", "pênalti"]
-penalti = ["gol", "defesa", "erro"]
+penalti = ["gol", "gol", "gol" "gol", "gol", "gol", "defesa", "defesa", "erro", "erro"]
 
 time_casa = input("Escolha o time da casa: ").upper()
 time_visitante = input("Escolha o time visitante: ").upper()

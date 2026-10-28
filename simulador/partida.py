@@ -4,14 +4,14 @@ gols_casa = 0
 gols_visitante = 0
 
 lances = ["gol", "defesa", "falta", "escanteio", "pênalti"]
-penalti = ["gol", "gol", "gol" "gol", "gol", "gol", "defesa", "defesa", "erro", "erro"]
+penalti = ["gol", "defesa", "erro"]
 
 time_casa = input("Escolha o time da casa: ").upper()
 time_visitante = input("Escolha o time visitante: ").upper()
-estadio = input(f"Escolha o estádio para a partida entre {time_casa} e {time_visitante}: ")
+estadio = input(f"Escolha o estádio para a partida entre {time_casa} e {time_visitante}: ").upper()
 
 print(f"========{time_casa} x {time_visitante}========")
-print(f"A bola rola no {estadio}\n")
+print(f"A BOLA ROLA NO {estadio}\n")
 
 for minuto in range(1, 93):
     sorteio = random.randint(1, 1000)
